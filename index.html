@@ -4,22 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ayush Srivastava - Portfolio</title>
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    <link rel="manifest" href="assets/site.webmanifest">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <!-- Font Awesome CDN Link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- CSS File -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Header Section -->
-    <header>
-        <nav>
-            <h1>Ayush Srivastava</h1>
-            <ul>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+
+        <header>
+            <nav>
+                <div class="logo">
+                    <h1>Ayush Srivastava</h1>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#certifications">Certifications</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
 
     <!-- Hero Section -->
     <section id="hero">
@@ -30,81 +43,83 @@
     </section>
 
     <!-- About Me Section -->
-<!-- About Me Section -->
     <section id="about">
         <h2>About Me</h2>
         <div class="about-content">
             <p>
-                I am Ayush Srivastava from India. I have been interested in technology and computers since my childhood. 
+                I am Ayush Srivastava from India. I have been interested in technology and computers since my childhood.
                 I am currently 17 years old, studying in Class 11 from the PCM stream.
             </p>
         </div>
     </section>
 
-
-
-<!-- Skills Section -->
-<section id="skills">
-    <h2>Skills</h2>
-    <div class="skills-container">
-        <!-- Python -->
-        <div class="skill-card">
-            <div class="skill-icon">
-                <i class="fab fa-python"></i>
-            </div>
-            <div class="skill-content">
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="card-container">
+            <div class="card">
+                <i class="fab fa-python skill-icon"></i>
                 <h3>Python</h3>
                 <p>4 years of experience. Developed various tools and certified in Python.</p>
             </div>
-        </div>
-
-        <!-- Linux -->
-        <div class="skill-card">
-            <div class="skill-icon">
-                <i class="fab fa-linux"></i>
-            </div>
-            <div class="skill-content">
+            <div class="card">
+                <i class="fab fa-linux skill-icon"></i>
                 <h3>Linux</h3>
                 <p>Linux system admin with extensive server management experience.</p>
             </div>
-        </div>
-
-        <!-- Webservers -->
-        <div class="skill-card">
-            <div class="skill-icon">
-                <i class="fas fa-server"></i>
-            </div>
-            <div class="skill-content">
+            <div class="card">
+                <i class="fas fa-server skill-icon"></i>
                 <h3>Webservers</h3>
-                <p>3+ years managing multiple high-traffic websites.</p>
+                <p>Over 3 years managing multiple high-traffic websites.</p>
             </div>
-        </div>
-
-        <!-- Cloud Hosting -->
-        <div class="skill-card">
-            <div class="skill-icon">
-                <i class="fas fa-cloud"></i>
-            </div>
-            <div class="skill-content">
+            <div class="card">
+                <i class="fas fa-cloud skill-icon"></i>
                 <h3>Cloud Hosting</h3>
-                <p>Skilled in deploying and managing cloud-hosted applications.</p>
+                <p>Skilled in deploying applications on cloud platforms for optimized performance.</p>
             </div>
-        </div>
-
-        <!-- Sysadmin -->
-        <div class="skill-card">
-            <div class="skill-icon">
-                <i class="fas fa-cogs"></i>
-            </div>
-            <div class="skill-content">
+            <div class="card">
+                <i class="fas fa-cogs skill-icon"></i>
                 <h3>Sysadmin</h3>
-                <p>Expert in system administration, ensuring server stability and security.</p>
+                <p>Expertise in system administration, ensuring server stability and security.</p>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="card-container">
+            <div class="card" >
+                <!-- <img src="project1.jpg" alt="Project 1"> -->
+                <h3>AyuFiles</h3>
+                <p>Web Application for uploading files and viewing information about uploaded files.</p>
+                <a href="https://github.com/ayu2606/AyuFiles" target="_blank" class="project-link">View on GitHub</a>
+            </div>
+            <div class="card" >
+                <!-- <img src="project2.jpg" alt="Project 2"> -->
+                <h3>Ayu Image - Ai Image generator</h3>
+                <p>Ayu Image is simple program that uses open ai's api to generate images.</p>
+                <a href="https://github.com/ayu2606/ayu-image" target="_blank" class="project-link">View on GitHub</a>
+            </div>
+        </div>
+    </section>
 
+    <!-- Certifications Section -->
+    <section id="certifications">
+        <h2>Certifications</h2>
+        <div class="card-container">
+            <div class="card">
+                <i class="fas fa-certificate skill-icon"></i>
+                <h3>Python Certification</h3>
+                <p>Certified in Python programming, covering advanced concepts and practical applications.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-certificate skill-icon"></i>
+                <h3>Linux Administration</h3>
+                <p>Certification in Linux administration, focusing on server management, networking, and security.</p>
+            </div>
+        </div>
+    </section>
 
     <!-- Contact Section -->
     <section id="contact">

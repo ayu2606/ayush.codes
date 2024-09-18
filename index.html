@@ -105,21 +105,32 @@
     </section>
 
     <!-- Certifications Section -->
+
     <section id="certifications">
         <h2>Certifications</h2>
         <div class="card-container">
             <div class="card">
                 <i class="fas fa-certificate skill-icon"></i>
-                <h3>Python Certification</h3>
-                <p>Certified in Python programming, covering advanced concepts and practical applications.</p>
+                <h3>Python Certification - IIIT Allahabad</h3>
+                <p>Certified in Python Programming from IIIT Allahabad, demonstrating proficiency in Python's core concepts, including data structures, algorithms, object-oriented programming, and libraries. This certification reflects a strong foundation in writing efficient, clean, and scalable Python code, as well as practical experience in real-world problem-solving using Python</p>
+                <button class="view-cert-btn" onclick="openModal('python.pdf')">View Certificate</button>
             </div>
             <div class="card">
                 <i class="fas fa-certificate skill-icon"></i>
-                <h3>Linux Administration</h3>
-                <p>Certification in Linux administration, focusing on server management, networking, and security.</p>
+                <h3>IT Basics - Programming Hub(Google)</h3>
+                <p>Certified in IT Basics, demonstrating a strong foundation in essential computer concepts, hardware, software, and networking. This certification covers core IT knowledge, including operating systems, cybersecurity fundamentals, basic troubleshooting, and the use of key productivity software. Equipped with practical skills to manage computer systems efficiently and effectively in various environments.</p>
+                <button class="view-cert-btn" onclick="openModal('itbasic.pdf')">View Certificate</button>
             </div>
         </div>
     </section>
+
+    <!-- Modal for PDF Viewer -->
+    <div id="pdfModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <iframe id="pdfViewer" src="" frameborder="0"></iframe>
+        </div>
+    </div>
 
     <!-- Contact Section -->
     <section id="contact">
@@ -132,4 +143,27 @@
         <p>&copy; 2024 Ayush Srivastava. All rights reserved.</p>
     </footer>
 </body>
+<script> 
+// Open Modal
+function openModal(pdfFileName) {
+    const modal = document.getElementById('pdfModal');
+    const pdfViewer = document.getElementById('pdfViewer');
+
+    // Set the source to the specified directory and file name
+    pdfViewer.src = `assets/certs/${pdfFileName}`;
+    modal.classList.add('show'); // Add the 'show' class to trigger the transition
+}
+
+// Close Modal
+function closeModal() {
+    const modal = document.getElementById('pdfModal');
+    const pdfViewer = document.getElementById('pdfViewer');
+
+    modal.classList.remove('show'); // Remove the 'show' class to fade out
+    setTimeout(() => {
+        pdfViewer.src = ""; // Clear the source to stop the PDF from playing
+    }, 300); // Wait for the transition to complete before clearing the src
+}
+
+</script>
 </html>

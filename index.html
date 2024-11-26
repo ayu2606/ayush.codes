@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ayush Srivastava - Portfolio</title>
     <!-- Favicon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    <script src="script.js"></script>
     <link rel="manifest" href="assets/site.webmanifest">
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
@@ -18,27 +20,30 @@
 </head>
 <body>
     <!-- Header Section -->
-
-        <header>
-            <nav>
-                <div class="logo">
-                    <h1>Ayush Srivastava</h1>
-                </div>
-                <ul class="nav-links">
-                    <li><a href="#about">About Me</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#certifications">Certifications</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </header>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>Ayush Srivastava</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
 
     <!-- Hero Section -->
     <section id="hero">
         <div class="hero-content">
             <h2>Hey, I am Ayush Srivastava</h2>
             <p>I am a software developer.</p>
+            <a href="#contact" class="btn">Contact Me</a>
         </div>
     </section>
 
@@ -57,31 +62,7 @@
     <section id="skills">
         <h2>Skills</h2>
         <div class="card-container">
-            <div class="card">
-                <i class="fab fa-python skill-icon"></i>
-                <h3>Python</h3>
-                <p>4 years of experience. Developed various tools and certified in Python.</p>
-            </div>
-            <div class="card">
-                <i class="fab fa-linux skill-icon"></i>
-                <h3>Linux</h3>
-                <p>Linux system admin with extensive server management experience.</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-server skill-icon"></i>
-                <h3>Webservers</h3>
-                <p>Over 3 years managing multiple high-traffic websites.</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-cloud skill-icon"></i>
-                <h3>Cloud Hosting</h3>
-                <p>Skilled in deploying applications on cloud platforms for optimized performance.</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-cogs skill-icon"></i>
-                <h3>Sysadmin</h3>
-                <p>Expertise in system administration, ensuring server stability and security.</p>
-            </div>
+            <!-- Skills cards -->
         </div>
     </section>
 
@@ -89,44 +70,15 @@
     <section id="projects">
         <h2>Projects</h2>
         <div class="card-container">
-            <div class="card" >
-                <!-- <img src="project1.jpg" alt="Project 1"> -->
-                <h3>AyuFiles</h3>
-                <p>Web Application for uploading files and viewing information about uploaded files.</p>
-                <a href="https://github.com/ayu2606/AyuFiles" target="_blank" class="project-link">View on GitHub</a>
-            </div>
-            <div class="card" >
-                <!-- <img src="project2.jpg" alt="Project 2"> -->
-                <h3>Ayu Image - Ai Image generator</h3>
-                <p>Ayu Image is simple program that uses open ai's api to generate images.</p>
-                <a href="https://github.com/ayu2606/ayu-image" target="_blank" class="project-link">View on GitHub</a>
-            </div>
-            <div class="card" >
-                <!-- <img src="project2.jpg" alt="Project 2"> -->
-                <h3>Whatsapp-Nodemcu</h3>
-                <p>This project allows you to send WhatsApp messages using a NodeMCU ESP8266 board and the Ultramsg API. The NodeMCU hosts a web server where users can input a phone number and message, and the ESP8266 will send the WhatsApp message using the Ultramsg service.</p>
-                <a href="https://github.com/ayu2606/whatsapp-nodemcu" target="_blank" class="project-link">View on GitHub</a>
-            </div>
+            <!-- Project cards -->
         </div>
     </section>
 
     <!-- Certifications Section -->
-
     <section id="certifications">
         <h2>Certifications</h2>
         <div class="card-container">
-            <div class="card">
-                <i class="fas fa-certificate skill-icon"></i>
-                <h3>Python Certification - IIIT Allahabad</h3>
-                <p>Certified in Python Programming from IIIT Allahabad, demonstrating proficiency in Python's core concepts, including data structures, algorithms, object-oriented programming, and libraries. This certification reflects a strong foundation in writing efficient, clean, and scalable Python code, as well as practical experience in real-world problem-solving using Python</p>
-                <button class="view-cert-btn" onclick="openModal('python.pdf')">View Certificate</button>
-            </div>
-            <div class="card">
-                <i class="fas fa-certificate skill-icon"></i>
-                <h3>IT Basics - Programming Hub(Google)</h3>
-                <p>Certified in IT Basics, demonstrating a strong foundation in essential computer concepts, hardware, software, and networking. This certification covers core IT knowledge, including operating systems, cybersecurity fundamentals, basic troubleshooting, and the use of key productivity software. Equipped with practical skills to manage computer systems efficiently and effectively in various environments.</p>
-                <button class="view-cert-btn" onclick="openModal('itbasic.pdf')">View Certificate</button>
-            </div>
+            <!-- Certification cards -->
         </div>
     </section>
 
@@ -142,34 +94,40 @@
     <section id="contact">
         <h2>Contact Me</h2>
         <p>Reach out to me on Discord: <strong>_ayush001</strong></p>
+        <form>
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit" class="btn">Send Message</button>
+        </form>
     </section>
 
     <!-- Footer -->
     <footer>
         <p>&copy; 2024 Ayush Srivastava. All rights reserved.</p>
     </footer>
+
+    <script>
+    function openModal(pdfFileName) {
+        const modal = document.getElementById('pdfModal');
+        const pdfViewer = document.getElementById('pdfViewer');
+        pdfViewer.src = `assets/certs/${pdfFileName}`;
+        modal.classList.add('show');
+    }
+
+    function closeModal() {
+        const modal = document.getElementById('pdfModal');
+        const pdfViewer = document.getElementById('pdfViewer');
+        modal.classList.remove('show');
+        setTimeout(() => {
+            pdfViewer.src = "";
+        }, 300);
+    }
+
+    function toggleMenu() {
+        const navLinks = document.querySelector('.nav-links');
+        navLinks.classList.toggle('active');
+    }
+    </script>
 </body>
-<script> 
-// Open Modal
-function openModal(pdfFileName) {
-    const modal = document.getElementById('pdfModal');
-    const pdfViewer = document.getElementById('pdfViewer');
-
-    // Set the source to the specified directory and file name
-    pdfViewer.src = `assets/certs/${pdfFileName}`;
-    modal.classList.add('show'); // Add the 'show' class to trigger the transition
-}
-
-// Close Modal
-function closeModal() {
-    const modal = document.getElementById('pdfModal');
-    const pdfViewer = document.getElementById('pdfViewer');
-
-    modal.classList.remove('show'); // Remove the 'show' class to fade out
-    setTimeout(() => {
-        pdfViewer.src = ""; // Clear the source to stop the PDF from playing
-    }, 300); // Wait for the transition to complete before clearing the src
-}
-
-</script>
 </html>

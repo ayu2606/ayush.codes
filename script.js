@@ -1,4 +1,81 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Initialize Typed.js
+    const typed = new Typed('#typed-text', {
+        strings: [
+            'I am a Software Developer',
+            'I build Web Applications',
+            'I love Linux Administration',
+            'I create Cloud Solutions'
+        ],
+        typeSpeed: 50,
+        backSpeed: 30,
+        loop: true
+    });
+
+    // Initialize Particles.js
+    particlesJS('particles-js', {
+        particles: {
+            number: { value: 80, density: { enable: true, value_area: 800 } },
+            color: { value: '#ffffff' },
+            shape: { type: 'circle' },
+            opacity: {
+                value: 0.5,
+                random: false,
+                animation: { enable: true, speed: 1, opacity_min: 0.1, sync: false }
+            },
+            size: {
+                value: 3,
+                random: true,
+                animation: { enable: true, speed: 2, size_min: 0.1, sync: false }
+            },
+            line_linked: {
+                enable: true,
+                distance: 150,
+                color: '#ffffff',
+                opacity: 0.4,
+                width: 1
+            },
+            move: {
+                enable: true,
+                speed: 2,
+                direction: 'none',
+                random: false,
+                straight: false,
+                out_mode: 'out',
+                bounce: false,
+            }
+        },
+        interactivity: {
+            detect_on: 'canvas',
+            events: {
+                onhover: { enable: true, mode: 'repulse' },
+                onclick: { enable: true, mode: 'push' },
+                resize: true
+            }
+        },
+        retina_detect: true
+    });
+
+    // Add scroll reveal animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('reveal');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.card').forEach(card => {
+        card.classList.add('fade-up');
+        observer.observe(card);
+    });
+
     // Skills Data
     const skillsData = [
         { 
@@ -35,23 +112,23 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             title: 'AyuFiles',
             description: 'Web Application for uploading files and viewing information about uploaded files.',
-            githubLink: 'https://github.com/yourusername/AyuFiles'
+            githubLink: 'https://github.com/ayu2606/AyuFiles'
         },
         {
             title: 'Ayu Image - AI Image Generator',
             description: "Ayu Image is a simple program that uses OpenAI's API to generate images.",
-            githubLink: 'https://github.com/yourusername/Ayu-Image'
+            githubLink: 'https://github.com/ayu2606/Ayu-Image'
         },
         {
             title: 'Whatsapp-Nodemcu',
             description: 'This project allows you to send WhatsApp messages using a NodeMCU ESP8266 board and the Ultramsg API. The NodeMCU hosts a web server where users can input a phone number and message, and the ESP8266 will send the WhatsApp message using the Ultramsg service.',
-            githubLink: 'https://github.com/yourusername/Whatsapp-Nodemcu'
+            githubLink: 'https://github.com/ayu2606/Whatsapp-Nodemcu'
         },
         {
             title: 'Personal Portfolio Website',
             description: 'Responsive personal portfolio website showcasing skills and projects',
             // image: 'path/to/portfolio-image.jpg',
-            githubLink: 'https://github.com/yourusername/portfolio'
+            githubLink: 'https://github.com/ayu2606/portfolio'
         }
         
         // Add more projects as needed
@@ -96,7 +173,7 @@ document.addEventListener('DOMContentLoaded', () => {
             projectCard.innerHTML = `
                 <h3>${project.title}</h3>
                 <p>${project.description}</p>
-                <a href="${project.githubLink}" class="project-link" target="_blank">View on GitHub</a>
+                <a href="${project.githubLink}" class="btn" target="_blank">View on GitHub</a>
             `;
             projectsContainer.appendChild(projectCard);
         });
@@ -142,5 +219,15 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.target === modal) {
             modal.classList.remove('show');
         }
+    });
+
+    // Add smooth scrolling for navigation
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
     });
 });

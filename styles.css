@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif; /* Changed to a stylish, modern font */
+    font-family: var(--font-body);
     scroll-behavior: smooth;
 }
 
@@ -27,7 +27,10 @@ section {
 }
 
 section h2 {
-    font-size: 28px;
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
     margin-bottom: 30px;
     color: #ffffff;
 }
@@ -50,8 +53,11 @@ nav {
 
 /* Logo Styling */
 .logo h1 {
+    font-family: var(--font-special);
     font-size: 24px;
-    color: #ffffff;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: var(--text-primary);
 }
 
 /* Navigation Links */
@@ -62,9 +68,12 @@ nav {
 }
 
 .nav-links li a {
+    font-family: var(--font-special);
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 0.02em;
     color: #e0e0e0;
     text-decoration: none;
-    font-size: 18px;
     padding: 10px 15px;
     transition: color 0.3s, background 0.3s;
     border-radius: 5px;
@@ -120,13 +129,19 @@ nav {
 }
 
 .card h3 {
+    font-family: var(--font-special);
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
     margin: 20px 0;
-    font-size: 22px;
     color: #ffffff;
 }
 
 .card p {
-    font-size: 16px;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.6;
+    font-weight: 400;
     color: #bbbbbb;
     padding: 0 20px 20px 20px;
 }
@@ -211,6 +226,10 @@ section:hover {
     transition: background 0.3s, color 0.3s;
     font-size: 16px;
     text-decoration: none;
+    font-family: var(--font-special);
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    text-transform: none;
 }
 
 .btn:hover {
@@ -228,6 +247,10 @@ form button[type="submit"] {
     padding: 10px;
     font-size: 16px;
     transition: background 0.3s, color 0.3s;
+    font-family: var(--font-special);
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    text-transform: none;
 }
 
 form button[type="submit"]:hover {
@@ -250,6 +273,8 @@ form input, form textarea {
     background: #2b2b2b;
     color: #ffffff;
     font-size: 16px;
+    font-family: var(--font-body);
+    font-weight: 400;
 }
 
 form textarea {
@@ -304,4 +329,322 @@ iframe {
     height: 600px;
     border: none;
     border-radius: 5px;
+}
+
+/* Modern Variable Colors */
+:root {
+    --primary-color: #2563eb;
+    --secondary-color: #3b82f6;
+    --background-dark: #0f0f0f;
+    --card-dark: #1d1d1d;
+    --text-primary: #ffffff;
+    --text-secondary: #e0e0e0;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* Font families */
+    --font-heading: 'Space Grotesk', sans-serif;
+    --font-body: 'Plus Jakarta Sans', sans-serif;
+    --font-special: 'Outfit', sans-serif;
+}
+
+/* Modern Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--background-dark);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 4px;
+}
+
+/* Hero Section Styling */
+#hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.highlight {
+    color: var(--primary-color);
+    position: relative;
+    display: inline-block;
+}
+
+.highlight::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background: var(--primary-color);
+    transform: scaleX(0);
+    transition: var(--transition);
+}
+
+.highlight:hover::after {
+    transform: scaleX(1);
+}
+
+.typed-container {
+    min-height: 50px;
+    margin: 20px 0;
+    font-size: 1.5rem;
+    color: var(--text-secondary);
+    font-family: var(--font-special);
+    font-weight: 300;
+    letter-spacing: 0.02em;
+}
+
+/* Modern Card Styling */
+.card {
+    background: var(--card-dark);
+    padding: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1));
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.card:hover::before {
+    opacity: 1;
+}
+
+/* Modern Button Styling */
+.btn {
+    position: relative;
+    overflow: hidden;
+    padding: 12px 30px;
+    border-radius: 8px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transform: translateY(0);
+    transition: var(--transition);
+}
+
+.primary-btn {
+    background: var(--primary-color);
+    color: white;
+}
+
+.secondary-btn {
+    background: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Animated Section Headers */
+section h2 {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 50px;
+}
+
+section h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    width: 50px;
+    height: 3px;
+    background: var(--primary-color);
+    transform: translateX(-50%);
+}
+
+/* Modern Form Styling */
+form input, form textarea {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    transition: var(--transition);
+}
+
+form input:focus, form textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+    outline: none;
+}
+
+/* Skill Icon Animation */
+.skill-icon {
+    position: relative;
+    z-index: 1;
+}
+
+.skill-icon::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: var(--primary-color);
+    border-radius: 50%;
+    z-index: -1;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: var(--transition);
+}
+
+.card:hover .skill-icon::after {
+    opacity: 0.1;
+    transform: scale(1.2);
+}
+
+/* Animation Classes */
+.fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: var(--transition);
+}
+
+.reveal {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Loading Animation */
+.loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--background-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.loading::after {
+    content: '';
+    width: 40px;
+    height: 40px;
+    border: 4px solid var(--text-secondary);
+    border-top-color: var(--primary-color);
+    border-radius: 50%;
+    animation: loading 0.75s infinite linear;
+}
+
+@keyframes loading {
+    to { transform: rotate(360deg); }
+}
+
+/* Update heading styles */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+}
+
+/* Logo styling */
+.logo h1 {
+    font-family: var(--font-special);
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: var(--text-primary);
+}
+
+/* Navigation links */
+.nav-links li a {
+    font-family: var(--font-special);
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 0.02em;
+}
+
+/* Hero section */
+.hero-content h2 {
+    font-family: var(--font-heading);
+    font-size: 3.5rem;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    line-height: 1.1;
+}
+
+.typed-container {
+    font-family: var(--font-special);
+    font-weight: 300;
+    letter-spacing: 0.02em;
+}
+
+/* Section headers */
+section h2 {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+}
+
+/* Card titles */
+.card h3 {
+    font-family: var(--font-special);
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+}
+
+/* Card content */
+.card p {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+/* Buttons */
+.btn {
+    font-family: var(--font-special);
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    text-transform: none;
+}
+
+/* Form elements */
+form input, form textarea {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+/* Footer */
+footer p {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 400;
 }

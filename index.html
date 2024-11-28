@@ -94,10 +94,13 @@
     <section id="contact">
         <h2>Contact Me</h2>
         <p>Reach out to me on Discord: <strong>_ayush001</strong></p>
-        <form>
+        <form action="https://formsubmit.co/ayush@ayush.codes" method="POST">
             <input type="text" name="name" placeholder="Your Name" required>
             <input type="email" name="email" placeholder="Your Email" required>
             <textarea name="message" placeholder="Your Message" required></textarea>
+            <!-- Optional: Add hidden fields for customization -->
+            <input type="hidden" name="_subject" value="New Portfolio Contact!">
+            <input type="hidden" name="_template" value="table">
             <button type="submit" class="btn">Send Message</button>
         </form>
     </section>
